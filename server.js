@@ -12,7 +12,18 @@ const app = express()
 /********************************** */
 // DATABASE CONNECTION
 /********************************** */
+const DATABASE_URL = process.env.DATABASE_URL
+const CONFIG = {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+}
 
+mongoose.connect(DATABASE_URL, CONFIG)
+
+mongoose.connection
+    .on("open", () => console.log("Connected to Mongoose"))
+    .on("close", () => console.log("Disconnected to Mongoose"))
+    .on("error", () => console.log(error))
 
 /********************************** */
 // ANIMALS MODEL
@@ -27,6 +38,9 @@ const app = express()
 /********************************** */
 
 // HOME ROUTE
+app.get("/", (req, res) => {
+    res.send("SERVER WORKING!!")
+})
 
 // SEED ROUTE
 
