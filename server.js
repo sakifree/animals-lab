@@ -28,10 +28,23 @@ mongoose.connection
 /********************************** */
 // ANIMALS MODEL
 /********************************** */
+const { Schema, model } = mongoose
 
+const animalsSchema = new Schema({
+    species: String,
+    extinct: Boolean,
+    location: String,
+    lifeExpectancy: Number
+})
+
+const Animal = model("Animal", animalsSchema)
 /********************************** */
 // MIDDLEWARE
 /********************************** */
+app.use(morgan("dev"))
+app.use(methodOverride("_method"))
+app.use(express.urlencoded({ extended: true }))
+app.use(express.static("public"))
 
 /********************************** */
 // ROUTES - HOME, SEED, INDUCES
