@@ -4,29 +4,29 @@
 <body>
     <%- include("../partials/header.ejs") %>
 </body>
-<main>
-    <div>
-        <form action="/animals" method="POST">
-            <fieldset>
-                <legend>Create a New Animal</legend>
-                <label>
-                    NAME: <input type="text" name="name" placeholder="Enter Name">
-                </label><br>
-                <label>
-                    SPECIES: <input type="text" name="species" placeholder="Enter Species">
-                </label><br>
-                <label>
-                    LOCATION: <input type="text" name="location" placeholder="Enter Location">
-                </label><br>
-                <label>
-                    LIFE EXPECTANCY: <input type="text" name="lifeExpectancy" placeholder="Enter Life Expectancy">
-                </label><br>
-                <label>
-                    Extinct: <input type="checkbox" name="isExtinct">
-                </label>
-            </fieldset>
-            <input type="submit" value="Create New Animal">
-        </form>
-    </div>
-</main>
+    <main>
+        <div>
+            <form action="/animals" method="POST">
+                <fieldset>
+                    <legend>Create a New Animal</legend>
+                    <label>
+                        NAME: <input type="text" name="name" placeholder="Enter Name">
+                    </label><br>
+                    <label>
+                        SPECIES: <input type="text" name="species" placeholder="Enter Species">
+                    </label><br>
+                    <label>
+                        LOCATION: <input type="text" name="location" placeholder="Enter Location">
+                    </label><br>
+                    <label>
+                        LIFE EXPECTANCY: <input type="text" name="lifeExpectancy" placeholder="Enter Life Expectancy">
+                    </label><br>
+                    <label>
+                        EXTINCT: <input type="checkbox" name="isExtinct">
+                    </label>
+                </fieldset>
+                <input type="submit" value="Create New Animal">
+            </form>
+        </div>
+    </main>
 </html>

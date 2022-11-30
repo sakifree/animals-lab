@@ -31,14 +31,29 @@ router.get("/new", (req, res) => {
 // CREATE ROUTE - POST .. receive the data from the form and create a new animal
 router.post("/", (req, res) => {
     req.body.isExtinct = req.body.isExtinct === "on" ? true : false
-    Animal.create(req.body, (err, createdAnimal) => {
+    Animal.create(req.body)
+    .then((createdAnimal) => {
         res.redirect("/animals")
     })
+    .catch(err => console.log(err))
 })
 
 // EDIT ROUTE - GET .. render a form to edit an animal
+router.get("/:id/edit", (req, res) => {
+    Animal.findById(req.params.id)
+    .then((foundAnimal) => {
+        res.render("animals/edit.ejs", { animal: foundAnimal })
+    })
+    .catch(err => console.log(err))
+})
 
 // UPDATE ROUTE - PUT .. update the animal with info from a form
+router.put("/:id", (req, res) => {
+    req.body.isExtinct = req.body.isExtinct === "on" ? true : false
+    Animal.findByIdAndUpdate(req.params.id, req.body, { new: true }, (err, updatedAnimal) => {
+        res.redirect(`/animals/${req.params.id}`)
+    })
+})
 
 // DELETE ROUTE - DELETE .. deletes the specfied item
 router.delete("/:id", (req, res) => {
@@ -46,6 +61,7 @@ router.delete("/:id", (req, res) => {
     .then((deletedAnimal) => {
         res.redirect("/animals")
     })
+    .catch(err => console.log(err))
 })
 
 // SHOW ROUTE - GET .. returns a single animal
@@ -54,6 +70,7 @@ router.get("/:id", (req, res) => {
     .then((animal) => {
         res.render("animals/show.ejs", { animal })
     })
+    .catch(err => console.log(err))
 })
 
 /********************************** */
