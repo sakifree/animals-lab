@@ -2,6 +2,16 @@
 <html lang="en">
     <%- include("../partials/head.ejs") %>
 <body>
-    <%- include("../partials/header.ejs") %>
+    <main>
+        <div>
+            <article>
+                <h3><%= animal.name %></h3>
+                <h3><%= animal.species %></h3>
+                <h3><%= animal.location %></h3>
+                <h3><%= animal.lifeExpectancy %> years</h3>
+                <h3><%= animal.isExtinct ? "Extinct" : "Not Extinct" %></h3>
+            </article>
+        </div>
+    </main>
 </body>
 </html>

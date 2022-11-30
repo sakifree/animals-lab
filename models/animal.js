@@ -11,7 +11,7 @@ const { Schema, model } = mongoose
 const animalsSchema = new Schema({
     name: String,
     species: String,
-    extinct: Boolean,
+    isExtinct: Boolean,
     location: String,
     lifeExpectancy: Number
 })
