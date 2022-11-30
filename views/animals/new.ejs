@@ -4,4 +4,29 @@
 <body>
     <%- include("../partials/header.ejs") %>
 </body>
+<main>
+    <div>
+        <form action="/animals" method="POST">
+            <fieldset>
+                <legend>Create a New Animal</legend>
+                <label>
+                    NAME: <input type="text" name="name" placeholder="Enter Name">
+                </label>
+                <label>
+                    SPECIES: <input type="text" name="species" placeholder="Enter Species">
+                </label>
+                <label>
+                    LOCATION: <input type="text" name="location" placeholder="Enter Location">
+                </label>
+                <label>
+                    LIFE EXPECTANCY: <input type="text" name="lifeExpectancy" placeholder="Enter Life Expectancy">
+                </label>
+                <label>
+                    Extinct: <input type="checkbox" name="isExtinct">
+                </label>
+            </fieldset>
+            <input type="submit" value="Create New Animal">
+        </form>
+    </div>
+</main>
 </html>
