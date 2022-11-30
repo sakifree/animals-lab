@@ -29,12 +29,24 @@ router.get("/new", (req, res) => {
 })
 
 // CREATE ROUTE - POST .. receive the data from the form and create a new animal
+router.post("/", (req, res) => {
+    req.body.isExtinct = req.body.isExtinct === "on" ? true : false
+    Animal.create(req.body, (err, createdAnimal) => {
+        res.redirect("/animals")
+    })
+})
 
 // EDIT ROUTE - GET .. render a form to edit an animal
 
 // UPDATE ROUTE - PUT .. update the animal with info from a form
 
 // DELETE ROUTE - DELETE .. deletes the specfied item
+router.delete("/:id", (req, res) => {
+    Animal.findByIdAndDelete(req.params.id)
+    .then((deletedAnimal) => {
+        res.redirect("/animals")
+    })
+})
 
 // SHOW ROUTE - GET .. returns a single animal
 router.get("/:id", (req, res) => {
