@@ -14,6 +14,14 @@ const router = express.Router()
 /********************************** */
 
 // INDEX ROUTE
+router.get("/", (req, res) => {
+    Animal.find({})
+    .then((animals) => {
+        //res.json(animals)
+        res.render("animals/index.ejs", { animals })
+    })
+    .catch(err => console.log(err))
+})
 
 // NEW ROUTE
 

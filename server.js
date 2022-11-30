@@ -5,7 +5,7 @@ require("dotenv").config()
 const express = require("express")
 const morgan = require("morgan")
 const methodOverride = require("method-override")
-const AnimalRouter = require("./controllers/animals")
+const AnimalRouter = require("./controllers/animalcontroller")
 const app = express()
 
 /********************************** */
