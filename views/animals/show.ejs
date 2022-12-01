@@ -4,13 +4,12 @@
 <body>
     <main>
         <div class="show">
-            
-                <h1><%= animal.name %></h1>
-                <article>
-                <p><%= animal.species %></p>
-                <p><%= animal.location %></p>
-                <p><%= animal.lifeExpectancy %> years</p>
-                <p><%= animal.isExtinct ? "Extinct" : "Not Extinct" %></p>
+            <h1><%= animal.name %></h1>
+            <article>
+                <p>SPECIES: <%= animal.species %></p>
+                <p>LOCATION: <%= animal.location %></p>
+                <p>LIFE EXPECTANCY: <%= animal.lifeExpectancy %> years</p>
+                <p>EXTINCT? <%= animal.isExtinct ? "Extinct" : "Not Extinct" %></p>
                 <a href="/animals/<%= animal._id %>/edit"><button>EDIT</button></a>
                 <form action="/animals/<%= animal._id %>?_method=DELETE" method="POST">
                     <input type="submit" value="DELETE">

@@ -2,6 +2,8 @@ html {
     background-image: url("https://cdn4.vectorstock.com/i/1000x1000/62/68/african-safari-animals-silhouette-background-vector-21366268.jpg");
     background-size: cover;
     height: 100%;
+    font-family: 'Teko', sans-serif;
+    font-size: 25px;
 }
 
 a:link {
