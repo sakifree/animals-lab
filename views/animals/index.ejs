@@ -2,10 +2,9 @@
 <html lang="en">
     <%- include("../partials/head.ejs") %>
 <body>
-    <%- include("../partials/header.ejs") %>
     <main>
-        <div>
-            <p><a href="/animals/new"><button>NEW ANIMAL</button></a></p>
+        <p><a href="/animals/new"><button>NEW ANIMAL</button></a></p>
+        <div class="index">
             <% for (animal of animals) { %>
                 <article>
                     <a href="/animals/<%= animal._id %>">

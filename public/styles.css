@@ -1,0 +1,22 @@
+html {
+    background-image: url("https://cdn4.vectorstock.com/i/1000x1000/62/68/african-safari-animals-silhouette-background-vector-21366268.jpg");
+    background-size: cover;
+    height: 100%;
+}
+
+a:link {
+    text-decoration: none;
+    color: white;
+}
+
+a:hover {
+    color: slategray;
+}
+
+div {
+    text-align: center;
+}
+
+button {
+    display: inline;
+}
